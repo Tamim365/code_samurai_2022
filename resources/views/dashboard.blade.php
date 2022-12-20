@@ -1,6 +1,6 @@
 @extends('master')
 @section('header')
-    <title>Dashboard|Coach</title>
+    <title>Dashboard | Admin</title>
 @endsection
 @section('content')
 <div class="content-page">

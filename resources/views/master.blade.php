@@ -21,29 +21,36 @@
 
 <body class="adminbody">
     <div id="main">
-        <!-- top bar navigation -->
         <div class="headerbar">
+
             <!-- LOGO -->
             <div class="headerbar-left">
-                <a href="{{route('/')}}" class="logo">
+                <a href="index.html" class="logo">
+                    <img alt="Logo" src="assets/images/logo.png" />
+                    <span> Admin</span>
                 </a>
             </div>
             <nav class="navbar-custom">
                 <ul class="list-inline float-right mb-0">
                     <li class="list-inline-item dropdown notif">
                         <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
-                            {{-- <img src="{{URL::asset('assets/images/avatars/admin.png')}}" alt="Profile image" class="avatar-rounded"> --}}
+                            <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                             <!-- item-->
 
 
                             <!-- item-->
-                            <a href="profile.html" class="dropdown-item notify-item">
+                            <a href="" class="dropdown-item notify-item">
                                 <i class="fas fa-user"></i>
                                 <span>Profile</span>
                             </a>
 
+                            <!-- item-->
+                            <a href="" class="dropdown-item notify-item">
+                                <i class="fas fa-power-off"></i>
+                                <span>Logout</span>
+                            </a>
                         </div>
                     </li>
 
@@ -76,13 +83,31 @@
                         <li class="submenu">
                             <a href="{{ url('/') }}">
                                 <i class="fas fa-bars"></i>
-                                <span> Dashboard </span>
+                                <span> Pending Users </span>
                             </a>
                         </li>
                         <li class="submenu">
                             <a href="{{ url('/') }}">
                                 <i class="fas fa-bars"></i>
-                                <span> Dashboard </span>
+                                <span> Active Users </span>
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="{{ url('/') }}">
+                                <i class="fas fa-bars"></i>
+                                <span> Project Proposals </span>
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="{{ url('/') }}">
+                                <i class="fas fa-bars"></i>
+                                <span> Running Projects </span>
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="{{ url('/') }}">
+                                <i class="fas fa-bars"></i>
+                                <span> Constraints </span>
                             </a>
                         </li>
                     </ul>

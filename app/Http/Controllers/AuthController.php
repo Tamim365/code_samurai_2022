@@ -28,6 +28,8 @@ class AuthController extends Controller
                 // if($request->filled('picture')){
                 //     $user->picture = (string)$request->picture;
                 // }
+                if($request->type == "Application Users") $user->confirmed = true;
+                
                 $save = $user->save();
                 // dd($save);
                 if($save){
