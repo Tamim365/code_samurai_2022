@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('user_id')->start(1000)->nocache();
+        Schema::create('agencies', function (Blueprint $table) {
+            $table->string('code')->unique();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
             $table->string('type');
             $table->string('status')->nullable()->default("pending");
+            $table->string('description');
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('agencies');
     }
 };
