@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    function index(){
+        return ('index');
+    }
     function register(Request $request){
         if ($request->isMethod('post')) {
             // dd($request);
@@ -29,7 +32,7 @@ class AuthController extends Controller
                 //     $user->picture = (string)$request->picture;
                 // }
                 if($request->type == "Application Users") $user->confirmed = true;
-                
+
                 $save = $user->save();
                 // dd($save);
                 if($save){

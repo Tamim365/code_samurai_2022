@@ -81,7 +81,7 @@
                             </a>
                         </li>
                         <li class="submenu">
-                            <a href="{{ url('/') }}">
+                            <a href="{{ url('/pending_users') }}">
                                 <i class="fas fa-bars"></i>
                                 <span> Pending Users </span>
                             </a>
