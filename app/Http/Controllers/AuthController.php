@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    function save_user(Request $request){
+    function register(Request $request){
         if ($request->isMethod('post')) {
             // dd($request);
             $request->validate([
@@ -43,6 +43,27 @@ class AuthController extends Controller
         }
         else{
             return back();
+        }
+    }
+    function login(Request $request){
+        if ($request->isMethod('post')){
+            $request->validate([
+                'email'=>'required|email',
+                'password'=>'required|min:6'
+            ]);
+            $user = User::where('email','=', $request->email)->first();
+            if($user && Hash::check($request->password, $user->password))
+            {
+                $request->session()->put('LoggedUser', [$user]);
+                return redirect('/');
+            }
+        }
+        return redirect('/');
+    }
+    function logOut(){
+        if(session()->has('LoggedUser')){
+            session()->pull('LoggedUser');
+            return redirect('/auth/login');
         }
     }
 }

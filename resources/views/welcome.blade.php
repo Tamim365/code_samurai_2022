@@ -34,42 +34,21 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="register-heading">Login</h3>
                         <div class="row register-form">
-                            <div class="col-md-10">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password *"
-                                        value="" />
-                                </div>
-                                {{-- <div class="form-group">
-                                    <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
-                                </div> --}}
-                                {{-- <div class="form-group">
-                                    <div class="maxl">
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="male" checked>
-                                            <span> Male </span> 
-                                        </label>
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="female">
-                                            <span>Female </span> 
-                                        </label>
+                            <form action="{{route('auth.login')}}" method="post">
+                                @csrf
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email *" value="" name="email"/>
                                     </div>
-                                </div> --}}
-                            </div>
-                            <div class="col-md-8">
-                                {{-- <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" value="" />
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Password *"
+                                        value="" name="password"/>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
+                                <div class="col-md-8">
+                                    <input type="submit" class="btnRegister" value="Login" />
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
-                                </div> --}}
-                                <input type="submit" class="btnRegister" value="Login" />
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
