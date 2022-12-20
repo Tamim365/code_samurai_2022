@@ -81,13 +81,13 @@
                             </a>
                         </li>
                         <li class="submenu">
-                            <a href="{{ url('/pending_users') }}">
+                            <a href="{{ url('/pending') }}">
                                 <i class="fas fa-bars"></i>
                                 <span> Pending Users </span>
                             </a>
                         </li>
                         <li class="submenu">
-                            <a href="{{ url('/') }}">
+                            <a href="{{ url('/active') }}">
                                 <i class="fas fa-bars"></i>
                                 <span> Active Users </span>
                             </a>

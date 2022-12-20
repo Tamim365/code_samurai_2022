@@ -106,6 +106,5 @@
 
             </div>
             <!-- END content -->
-
         </div>
 @endsection
