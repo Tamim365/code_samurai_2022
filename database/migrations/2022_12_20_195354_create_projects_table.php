@@ -17,17 +17,19 @@ return new class extends Migration
             $table->string('project_id')->unique();
             $table->string('name');
             $table->string('location');
-            $table->floatval('latitude');
-            $table->floatval('longitude');
-            $table->foreign('exec')
-                ->references('code')->on('agencies')
-                ->onDelete('set null');
-            $table->floatval('cost');
+            $table->float('latitude');
+            $table->float('longitude');
+            // $table->unsignedBigInteger('exec');
+            $table->float('cost');
             $table->integer('timespan');
             $table->string('goal');
             $table->date('start_date');
-            $table->floatval('completion');
-            $table->floatval('actual_cost');
+            $table->float('completion');
+            $table->float('actual_cost');
+            $table->string('exec')
+                ->references('code')->on('agencies')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

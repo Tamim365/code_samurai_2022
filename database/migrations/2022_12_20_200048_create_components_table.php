@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('components', function (Blueprint $table) {
             $table->string('component_id')->unique();
-            $table->foreign('project_id')
+            $table->string('project_id')
                 ->references('project_id')->on('projects')
                 ->onDelete('set null');
             $table->string('executing_agency');
             $table->string('component_type');
             $table->string('depends_on');
-            $table->floatval('budget_ratio');
+            $table->float('budget_ratio');
         });
     }
 
