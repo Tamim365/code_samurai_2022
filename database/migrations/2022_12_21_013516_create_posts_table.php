@@ -18,12 +18,11 @@ class CreatePostsTable extends Migration
             
             $table->string('title');
             $table->longText('content');
-            $table->string('slug')->unique();
-            
-            // $table->integer('user_id')->unsigned()->index()->comment('author of the post');
+
+            // $table->integer('user_id')->unsigned()->nullable();
             $table->integer('user_id')
                 ->references('user_id')->on('users')
-                ->onDelete('set null');
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

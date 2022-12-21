@@ -24,5 +24,5 @@ Route::post('accept_user/{id}','App\Http\Controllers\UsersController@accept')->n
 Route::post('decline_user/{id}','App\Http\Controllers\UsersController@decline')->name('user.decline');
 Route::any('proposals/accept/{id}', 'App\Http\Controllers\ProposalController@accept')->name('proposals.accept');
 Route::any('proposals/decline/{id}', 'App\Http\Controllers\ProposalController@decline')->name('proposals.decline');
-
-
+Route::get('posts', 'App\Http\Controllers\PostController@create')->name('posts');
+Route::any('posts/add', 'App\Http\Controllers\PostController@add')->name('posts.add');
