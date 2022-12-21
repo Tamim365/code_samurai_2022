@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AuthCheck extends Middleware
+class AuthCheck
 {
     /**
      * Handle an incoming request.
@@ -17,11 +17,11 @@ class AuthCheck extends Middleware
     public function handle(Request $request, Closure $next)
     {
         if(!session()->has('LoggedUser') && ($request->path() !='auth/login' && $request->path() !='auth/register' )){
-            return redirect('auth/login')->with('fail','You must be logged in');
+            return redirect('/')->with('fail','You must be logged in');
         }
 
         if(session()->has('LoggedUser') && ($request->path() == 'auth/login' || $request->path() == 'auth/register' ) ){
-            return back();
+            return redirect('/');
         }
         if(session()->has('LoggedUser'))
         {

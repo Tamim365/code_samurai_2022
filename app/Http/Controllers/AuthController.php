@@ -60,7 +60,7 @@ class AuthController extends Controller
             if($user && Hash::check($request->password, $user->password))
             {
                 $request->session()->put('LoggedUser', [$user]);
-                return redirect('/');
+                return redirect('/dashboard');
             }
         }
         return redirect('/');
