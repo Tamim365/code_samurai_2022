@@ -70,5 +70,6 @@ class AuthController extends Controller
             session()->pull('LoggedUser');
             return redirect('/auth/login');
         }
+        else return redirect('/auth/login');
     }
 }

@@ -47,7 +47,7 @@
                             </a>
 
                             <!-- item-->
-                            <a href="" class="dropdown-item notify-item">
+                            <a href="{{route('auth.logout')}}" class="dropdown-item notify-item">
                                 <i class="fas fa-power-off"></i>
                                 <span>Logout</span>
                             </a>

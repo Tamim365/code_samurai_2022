@@ -40,7 +40,7 @@
                                             <i class="fas fa-user-plus" aria-hidden="true"></i> Add new member</button>
                                     </span> --}}
                                     <h3>
-                                        <i class="far fa-user"></i> All Members</h3>
+                                        <i class="far fa-user"></i> All Users</h3>
                                 </div>
                                 <!-- end card-header -->
 
