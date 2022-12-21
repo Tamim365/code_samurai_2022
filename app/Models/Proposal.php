@@ -10,7 +10,6 @@ class Proposal extends Model
     protected $table = 'proposals';
     protected $primaryKey = 'project_id';
     public $timestamps = false;
-    public $incrementing = false;
     use HasFactory;
     use SoftDeletes;
     protected $fillable = ['project_id','name', 'location', 'latitude','longitude','exec','cost','timespan','goal','proposal_date'];

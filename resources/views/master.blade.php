@@ -93,13 +93,13 @@
                             </a>
                         </li>
                         <li class="submenu">
-                            <a href="{{ url('/') }}">
+                            <a href="{{ url('/proposals') }}">
                                 <i class="fas fa-bars"></i>
                                 <span> Project Proposals </span>
                             </a>
                         </li>
                         <li class="submenu">
-                            <a href="{{ url('/') }}">
+                            <a href="{{ url('/projects') }}">
                                 <i class="fas fa-bars"></i>
                                 <span> Running Projects </span>
                             </a>

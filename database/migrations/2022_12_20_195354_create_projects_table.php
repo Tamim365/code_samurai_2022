@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->string('project_id')->unique();
+            $table->increments('project_id')->unique();
             $table->string('name');
             $table->string('location');
             $table->float('latitude');
@@ -23,9 +23,10 @@ return new class extends Migration
             $table->float('cost');
             $table->integer('timespan');
             $table->string('goal');
-            $table->date('start_date');
-            $table->float('completion');
-            $table->float('actual_cost');
+            $table->string('start_date');
+            $table->float('completion')->nullable()->default(0);
+            $table->float('actual_cost')->nullable()->default(0);
+            $table->float('ratings')->nullable()->default(0);
             $table->string('exec')
                 ->references('code')->on('agencies')
                 ->onUpdate('cascade')

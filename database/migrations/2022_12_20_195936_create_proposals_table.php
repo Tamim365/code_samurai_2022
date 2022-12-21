@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('proposals', function (Blueprint $table) {
-            $table->string('project_id')->unique();
+            $table->increments('project_id')->unique();
             $table->string('name');
             $table->string('location');
             $table->float('latitude');
@@ -24,7 +24,8 @@ return new class extends Migration
             $table->float('cost');
             $table->integer('timespan');
             $table->string('goal');
-            $table->date('proposal_date');
+            $table->string('proposal_date');
+            $table->string('status')->nullable()->default("pending");
         });
     }
 
